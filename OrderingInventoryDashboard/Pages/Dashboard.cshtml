@@ -4,7 +4,6 @@
     ViewData["Title"] = "Dashboard";
 }
 <div class="container-fluid mt-3">
-
     <!--KPI summary Cards-->
     <div class="row mb-3">
         <div class="col-md-3">
@@ -44,8 +43,57 @@
     <!--Inventaory table and Alerts-->
     <div class="row">
         <div class="col-md-8 mb-3">
-
+            <h4>Inventory Table</h4>
+            <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                        <th>Stock</th>
+                        <th>Reserved</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tblInventoryData">
+            </tbody>
+            </table>
         </div>
-        <div class="col-md-12 mb-3"></div>
+        <div class="col-md-4 mb-3">
+            <h4>Alerts</h4>
+            <ul id="alertList" class="list-group">
+
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+                <h4>Recent Orders</h4>
+                <!--Implement it later-->
+                <a asp-asp-page="/Orders/Create" class="btn btn-primary">+Create Order</a>
+            </div>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="ordersTableBody">
+                    <!-- Populated dynamically -->
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
+
+<!--Scripts-->
+@section Scripts
+{
+    <script src="~/js/dashboard.js"></script>
+}
