@@ -1,4 +1,51 @@
 ﻿@page
 @model OrderingInventoryDashboard.Pages.DashboardModel
 @{
+    ViewData["Title"] = "Dashboard";
 }
+<div class="container-fluid mt-3">
+
+    <!--KPI summary Cards-->
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5>Total Orders</h5>
+                    <h3>@Model.DashboardData.TotalOrders</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5>Pending Orders</h5>
+                    <h3>@Model.DashboardData.PendingOrders</h3>
+                </div>
+            </div>          
+         </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-primary">
+                    <div class="card-body">
+                        <h5>Low Stock items</h5>
+                        <h3>@Model.DashboardData.LowStockItems</h3>
+                    </div>
+                </div>
+           </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5>Total Revenue</h5>
+                    <h3>@Model.DashboardData.TotalRevenue</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Inventaory table and Alerts-->
+    <div class="row">
+        <div class="col-md-8 mb-3">
+
+        </div>
+        <div class="col-md-12 mb-3"></div>
+    </div>
+</div>

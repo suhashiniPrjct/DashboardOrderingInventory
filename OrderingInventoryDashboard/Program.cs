@@ -1,7 +1,16 @@
+using OrderingInventoryDashboard.Data;
+using OrderingInventoryDashboard.Services;
+using OrderingInventoryDashboard.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<MockOrderRepository>();
+builder.Services.AddScoped<MockProductRepository>();
+
 
 var app = builder.Build();
 
